@@ -1,0 +1,144 @@
+:root{
+  --green:#173d2a;
+  --green-2:#315c2d;
+  --blue:#063f70;
+  --blue-2:#176a9b;
+  --gold:#dca23a;
+  --ink:#14211b;
+  --muted:#66736d;
+  --cream:#f5f4ee;
+  --white:#fff;
+  --line:#dfe4df;
+  --shadow:0 18px 50px rgba(17,39,29,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:"DM Sans",Arial,sans-serif;background:#fff;line-height:1.65}
+img{display:block;max-width:100%}
+a{color:inherit}
+.container{width:min(1160px,calc(100% - 40px));margin:auto}
+.site-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.07)}
+.nav-wrap{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;text-decoration:none;gap:10px}
+.brand-mark{width:52px;height:52px;object-fit:contain}
+.brand-text{display:flex;flex-direction:column;line-height:1}
+.brand-text strong{font-family:"Playfair Display",Georgia,serif;font-size:22px;color:var(--green)}
+.brand-text small{font-size:10px;letter-spacing:5px;color:var(--blue);margin-top:7px}
+.nav{display:flex;align-items:center;gap:24px;font-size:14px;font-weight:600}
+.nav a{text-decoration:none}
+.nav a:hover{color:var(--blue-2)}
+.nav-cta{background:var(--green);color:white!important;padding:11px 16px;border-radius:999px}
+.menu-toggle{display:none;border:0;background:none;font-size:26px}
+.hero{min-height:700px;position:relative;color:white;display:flex;align-items:center;overflow:hidden}
+.hero-image{position:absolute;inset:0;background:url("assets/glacier-lake.jpeg") center/cover no-repeat;transform:scale(1.02)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,25,16,.82),rgba(5,25,16,.38) 52%,rgba(5,25,16,.08))}
+.hero-content{position:relative;z-index:1;padding:90px 0;max-width:760px}
+.eyebrow{font-size:12px;letter-spacing:3px;font-weight:700;margin:0 0 18px}
+.eyebrow.green{color:var(--green-2)}
+.eyebrow.gold{color:var(--gold)}
+.hero h1,h2,h3{font-family:"Playfair Display",Georgia,serif}
+.hero h1{font-size:clamp(48px,7vw,82px);line-height:1.04;margin:0 0 20px;letter-spacing:-2px}
+.hero h1 em{font-style:normal}
+.hero-copy{font-size:25px;font-weight:600;margin:0 0 10px}
+.hero-description{font-size:18px;max-width:650px;color:rgba(255,255,255,.9)}
+.hero-actions{display:flex;gap:24px;align-items:center;margin-top:32px}
+.button{display:inline-block;text-decoration:none;border-radius:999px;padding:13px 21px;font-weight:700;border:1px solid transparent}
+.button-light{background:white;color:var(--green)}
+.button-dark{background:var(--green);color:white}
+.text-link{text-decoration:none;font-weight:700}
+.text-link.light{color:white}
+.section{padding:90px 0}
+.intro{background:white}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+h2{font-size:clamp(36px,4vw,55px);line-height:1.08;letter-spacing:-1px;margin:0 0 20px}
+.lead{font-size:20px;color:#3f4d46}
+.soft{background:var(--cream)}
+.section-heading{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:38px}
+.section-heading>p{max-width:420px;color:var(--muted);margin:0}
+.adventure-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.adventure-card{position:relative;min-height:520px;overflow:hidden;border-radius:20px;text-decoration:none;background:#111;box-shadow:var(--shadow)}
+.adventure-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.adventure-card:hover img{transform:scale(1.05)}
+.adventure-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(0,0,0,.8) 100%)}
+.card-content{position:absolute;z-index:2;bottom:0;padding:30px;color:white}
+.card-content span,.tag{font-size:11px;letter-spacing:2px;font-weight:800}
+.card-content h3{font-size:32px;line-height:1.1;margin:10px 0}
+.card-content p{color:rgba(255,255,255,.88)}
+.card-content strong{color:#fff}
+.story-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:25px}
+.story{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:white}
+.story img{width:100%;height:250px;object-fit:cover}
+.story.featured img{height:330px}
+.story-body{padding:25px}
+.story-body .tag{color:var(--blue)}
+.story h3{font-size:28px;line-height:1.15;margin:9px 0 10px}
+.story-body p{color:var(--muted)}
+.story-body a{font-weight:700;text-decoration:none;color:var(--green)}
+.dark-section{background:var(--green);color:white}
+.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px}
+.feature-grid .large{font-size:20px;color:rgba(255,255,255,.8);max-width:550px}
+.tips-list>div{border-top:1px solid rgba(255,255,255,.2);padding:18px 0;display:grid;grid-template-columns:45px 1fr;column-gap:12px}
+.tips-list>div:last-child{border-bottom:1px solid rgba(255,255,255,.2)}
+.tips-list span{color:var(--gold);font-weight:800}
+.tips-list strong{font-size:18px}
+.tips-list p{grid-column:2;margin:2px 0 0;color:rgba(255,255,255,.7)}
+.gear-section{background:#fff}
+.gear-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.gear-image img{width:100%;height:600px;object-fit:cover;border-radius:22px}
+.gear-copy{max-width:530px}
+.small-note{font-size:12px;color:var(--muted);margin-top:22px}
+.planning{background:linear-gradient(135deg,var(--blue),#0a5b82);color:white}
+.planning-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:70px;align-items:center}
+.planning p:not(.eyebrow){color:rgba(255,255,255,.82);font-size:18px;max-width:650px}
+.coming-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:8px}
+.coming-card .mark{font-family:"Playfair Display",Georgia,serif;font-size:54px;color:var(--gold)}
+.coming-card span{color:rgba(255,255,255,.7)}
+.about-section{background:var(--cream)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-photo img{width:100%;height:540px;object-fit:cover;border-radius:22px}
+.newsletter{background:#0e1e17;color:white;padding:70px 0}
+.newsletter-inner{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.newsletter p:not(.eyebrow){color:rgba(255,255,255,.72)}
+.signup-form label{display:block;font-size:13px;font-weight:700;margin-bottom:8px}
+.form-row{display:flex;gap:10px}
+.signup-form input{flex:1;padding:14px 16px;border-radius:999px;border:0;font:inherit}
+.signup-form button{border:0;border-radius:999px;padding:0 20px;font-weight:700}
+.signup-form small{display:block;color:rgba(255,255,255,.5);margin-top:10px}
+.footer{background:#09130f;color:white;padding:60px 0 20px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:50px}
+.footer-logo{width:240px;height:auto;object-fit:contain;margin-bottom:10px}
+.footer p{color:rgba(255,255,255,.6);max-width:360px}
+.footer h4{margin:0 0 15px}
+.footer a{display:block;color:rgba(255,255,255,.65);text-decoration:none;margin:7px 0}
+.footer a:hover{color:white}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:45px;padding-top:18px;display:flex;justify-content:space-between;color:rgba(255,255,255,.45);font-size:12px}
+@media(max-width:900px){
+  .nav{display:none;position:absolute;top:82px;left:0;right:0;background:white;padding:20px;box-shadow:0 15px 30px rgba(0,0,0,.1);flex-direction:column;align-items:stretch}
+  .nav.open{display:flex}
+  .menu-toggle{display:block}
+  .adventure-grid,.story-grid{grid-template-columns:1fr}
+  .adventure-card{min-height:440px}
+  .story.featured img,.story img{height:300px}
+  .intro-grid,.feature-grid,.gear-grid,.planning-inner,.about-grid,.newsletter-inner{grid-template-columns:1fr;gap:45px}
+  .section-heading{display:block}
+  .section-heading>p{margin-top:15px}
+  .gear-image img,.about-photo img{height:460px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .container{width:min(100% - 28px,1160px)}
+  .nav-wrap{height:72px}
+  .nav{top:72px}
+  .hero{min-height:650px}
+  .hero-content{padding:70px 0}
+  .hero h1{font-size:48px}
+  .hero-description{font-size:16px}
+  .hero-actions{flex-direction:column;align-items:flex-start}
+  .section{padding:65px 0}
+  .gear-image img,.about-photo img{height:360px}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{display:block}
+  .footer-bottom span{display:block;margin:6px 0}
+  .form-row{display:block}
+  .signup-form button{width:100%;height:48px;margin-top:10px}
+}
