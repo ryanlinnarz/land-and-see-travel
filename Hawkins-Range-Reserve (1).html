@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hawkins Range Reserve | Land &amp; See Travel</title>
+  <meta name="description" content="A trail run at Hawkins Range Reserve in the Boise Foothills — a destination close to home with granite formations, open views and a moderate 5.7-mile loop.">
+
+  <style>
+    :root {
+      --green: #294b3a;
+      --green-dark: #1e382c;
+      --cream: #f6f3ec;
+      --text: #243029;
+      --muted: #68736c;
+      --white: #ffffff;
+      --border: #dfe4df;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* Header / navigation */
+    .site-header {
+      background: var(--green-dark);
+      color: var(--white);
+      padding: 18px 5%;
+    }
+
+    .nav-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 18px;
+    }
+
+    .nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.92rem;
+    }
+
+    .nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Photo hero */
+    .story-hero {
+      min-height: 560px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      background-image:
+        linear-gradient(to bottom, rgba(0,0,0,0.05) 15%, rgba(0,0,0,0.72) 100%),
+        url("assets/Main-Photo.JPEG");
+      background-size: cover;
+      background-position: center 55%;
+      color: var(--white);
+    }
+
+    .story-hero-content {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 80px 5% 58px;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .story-hero h1 {
+      max-width: 850px;
+      margin: 0;
+      font-size: clamp(2.4rem, 6vw, 4.7rem);
+      line-height: 1.05;
+    }
+
+    .story-hero h1 em {
+      font-style: normal;
+      display: block;
+    }
+
+    .story-hero .subtitle {
+      max-width: 720px;
+      margin: 18px 0 0;
+      font-size: 1.15rem;
+    }
+
+    /* Article */
+    .article-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 5% 80px;
+    }
+
+    .article p {
+      margin: 0 0 24px;
+      font-size: 1.06rem;
+    }
+
+    .article h2 {
+      margin: 52px 0 18px;
+      color: var(--green);
+      font-size: 1.75rem;
+      line-height: 1.2;
+    }
+
+    .photo {
+      margin: 38px 0 42px;
+    }
+
+    .photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .photo figcaption {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .glance {
+      margin: 38px 0 44px;
+      padding: 28px;
+      background: var(--white);
+      border-left: 5px solid var(--green);
+      border-radius: 8px;
+      box-shadow: 0 5px 20px rgba(35, 48, 41, 0.06);
+    }
+
+    .glance h2 {
+      margin: 0 0 18px;
+      font-size: 1.45rem;
+    }
+
+    .glance-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px 28px;
+    }
+
+    .glance-item strong {
+      display: block;
+      color: var(--green);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .glance-item span {
+      display: block;
+    }
+
+    .video-box {
+      margin: 32px 0 42px;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px;
+      background: #e7ebe7;
+      border-radius: 10px;
+      color: var(--muted);
+    }
+
+    .video-box strong {
+      display: block;
+      color: var(--green);
+      margin-bottom: 6px;
+      font-size: 1.15rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--green);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--green-dark);
+      color: var(--white);
+      padding: 42px 5%;
+    }
+
+    .footer-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-wrap a {
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .footer-wrap a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-copy {
+      color: #dce4de;
+      margin: 8px 0 0;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 700px) {
+      .nav-wrap,
+      .footer-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+
+      .story-hero {
+        min-height: 500px;
+        background-position: center center;
+      }
+
+      .story-hero-content {
+        padding-top: 70px;
+        padding-bottom: 42px;
+      }
+
+      .story-hero h1 {
+        font-size: 2.45rem;
+      }
+
+      .article-wrap {
+        padding-top: 44px;
+      }
+
+      .glance-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo {
+        margin-top: 30px;
+        margin-bottom: 34px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html">LAND &amp; SEE TRAVEL</a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="Land-Travel.html">Land</a>
+        <a href="index.html#sea">Sea</a>
+        <a href="index.html#destinations">Destinations</a>
+        <a href="index.html#tips">Travel Tips</a>
+        <a href="index.html#gear">Gear</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#plan">Plan Your Trip</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="story-hero">
+      <div class="story-hero-content">
+        <p class="eyebrow">Land Travel • Trail Run</p>
+        <h1>Hawkins Range Reserve:<br><em>A Destination Close to Home</em></h1>
+        <p class="subtitle">Sometimes the best places worth the trip are right in your own backyard.</p>
+      </div>
+    </section>
+
+    <article class="article-wrap article">
+
+      <p>
+        Sometimes the best places worth the trip aren’t across the country — they’re right in your own backyard. Last Saturday, my son, his girlfriend, and I headed up toward Bogus Basin and stopped at Hawkins Range Reserve, a spot tucked into the Boise Foothills that feels surprisingly remote for being only about 40 minutes from home.
+      </p>
+
+      <figure class="photo">
+        <img src="assets/Run Photo 1.JPEG" alt="Trail winding between granite formations at Hawkins Range Reserve" loading="lazy">
+        <figcaption>The trail winds through granite formations and open foothill terrain.</figcaption>
+      </figure>
+
+      <p>
+        We chose the longer <strong>5.7-mile loop</strong>, one of two trails in the reserve (the other is a shorter <strong>2.1-mile loop</strong>). The trail is a directional, counterclockwise single-track trail, and it’s rated moderate in difficulty. This trail offers a mix of rolling hills, granite formations, and wide-open views of Boise and the foothills. According to OnX Backcountry, it has about 395 feet of elevation gain.
+      </p>
+
+      <p>
+        For me, it was the longest run I’ve done in about a year – so it was a bit of a workout. That said, the trail is well-built and gives you that perfect blend of scenery.
+      </p>
+
+      <div class="glance">
+        <h2>Trail at a Glance</h2>
+
+        <div class="glance-grid">
+          <div class="glance-item">
+            <strong>Longer loop</strong>
+            <span>5.7 miles</span>
+          </div>
+
+          <div class="glance-item">
+            <strong>Shorter loop</strong>
+            <span>2.1 miles</span>
+          </div>
+
+          <div class="glance-item">
+            <strong>Difficulty</strong>
+            <span>Moderate</span>
+          </div>
+
+          <div class="glance-item">
+            <strong>Trail direction</strong>
+            <span>Counterclockwise</span>
+          </div>
+
+          <div class="glance-item">
+            <strong>Elevation gain</strong>
+            <span>About 395 feet, according to OnX Backcountry</span>
+          </div>
+
+          <div class="glance-item">
+            <strong>Terrain</strong>
+            <span>Rolling hills, granite formations and open views</span>
+          </div>
+        </div>
+      </div>
+
+      <figure class="photo">
+        <img src="assets/Trail-Glance.JPEG" alt="Hawkins Loop Trail sign and trail map" loading="lazy">
+        <figcaption>Trail signage at Hawkins Range Reserve shows the counterclockwise direction and loop map.</figcaption>
+      </figure>
+
+      <p>
+        If you’re feeling ambitious, you can combine both loops for a total of about 8 miles, which makes for a great longer run or hike.
+      </p>
+
+      <figure class="photo">
+        <img src="assets/Run Photo 2.JPEG" alt="Granite formations and open views along Hawkins Range Reserve" loading="lazy">
+        <figcaption>Granite formations are one of the highlights along the route.</figcaption>
+      </figure>
+
+      <h2>🚗 A Note on the Drive Up</h2>
+
+      <p>
+        The road to Hawkins Range Reserve is narrow, winding, and full of blind corners. Some drivers get a little too eager on that climb toward Bogus Basin, so take it slow. We saw multiple deer along the roadside, so staying alert is important – especially early in the morning or near dusk.
+      </p>
+
+      <h2>🎥 Want to See the Trail?</h2>
+
+      <p>
+        I put together a short video of the experience – if you want to see what the trail looks like, you can check it out through the link below. It’s a great reminder that you don’t have to travel far to find great destinations!
+      </p>
+
+      <div class="video-box">
+        <div>
+          <strong>Trail video coming soon</strong>
+          <span>Once the YouTube video is ready, we can replace this area with the video.</span>
+        </div>
+      </div>
+
+      <p>
+        Hawkins Range Reserve is a good example of what we’re looking for at Land &amp; See Travel: real places, real experiences, and trips that don’t always require a long drive or a big travel budget.
+      </p>
+
+      <a class="back-link" href="Land-Travel.html">← Back to Land Travel</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-wrap">
+      <div>
+        <strong>LAND &amp; SEE TRAVEL</strong>
+        <p class="footer-copy">Adventures from campgrounds to cruises — real trips, real tips, real gear.</p>
+      </div>
+
+      <div>
+        <a href="index.html">Home</a><br>
+        <a href="Land-Travel.html">Land Travel</a><br>
+        <a href="index.html#sea">Sea Travel</a><br>
+        <a href="index.html#destinations">Destinations</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
