@@ -194,23 +194,18 @@
     }
 
     .video-box {
-      margin: 32px 0 42px;
-      min-height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px;
-      background: #e7ebe7;
+      margin: 32px 0 18px;
+      aspect-ratio: 16 / 9;
+      background: #14211b;
       border-radius: 10px;
-      color: var(--muted);
+      overflow: hidden;
     }
 
-    .video-box strong {
+    .video-box iframe {
       display: block;
-      color: var(--green);
-      margin-bottom: 6px;
-      font-size: 1.15rem;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
 
     .back-link {
@@ -402,15 +397,19 @@
       <h2>🎥 Want to See the Trail?</h2>
 
       <p>
-        I put together a short video of the experience – if you want to see what the trail looks like, you can check it out through the link below. It’s a great reminder that you don’t have to travel far to find great destinations!
+        I put together a short video of the experience – if you want to see what the trail looks like, you can watch it below or open it on YouTube. It’s a great reminder that you don’t have to travel far to find great destinations!
       </p>
 
       <div class="video-box">
-        <div>
-          <strong>Trail video coming soon</strong>
-          <span>Once the YouTube video is ready, we can replace this area with the video.</span>
-        </div>
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/nJyy-AClKjk"
+          title="Hawkins Trailhead Run — Land &amp; See Travel"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
       </div>
+      <p><a href="https://youtu.be/nJyy-AClKjk">Watch the Hawkins Trailhead Run on YouTube →</a></p>
 
       <p>
         Hawkins Range Reserve is a good example of what we’re looking for at Land &amp; See Travel: real places, real experiences, and trips that don’t always require a long drive or a big travel budget.

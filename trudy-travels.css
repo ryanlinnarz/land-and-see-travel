@@ -1,0 +1,27 @@
+.trudy-review{padding:12px 0;background:#fff3d7;color:var(--ink);font-size:14px}
+.trudy-hero{display:grid;grid-template-columns:1.2fr .8fr;gap:70px;align-items:center}
+.trudy-page h1{font-family:"Playfair Display",Georgia,serif;font-size:clamp(44px,6vw,76px);line-height:1.1;margin:0 0 24px;color:var(--green)}
+.trudy-page figure{margin:0}
+.trudy-cover{max-width:350px;width:100%;justify-self:center}
+.trudy-placeholder{aspect-ratio:3/4;border:2px dashed #829488;border-radius:16px;background:white;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:16px;padding:28px;text-align:center;color:var(--green)}
+.trudy-placeholder strong{font-family:"Playfair Display",Georgia,serif;font-size:30px}
+.trudy-placeholder span{font-size:14px}
+.trudy-page figcaption{font-size:13px;color:#4b5b51;margin-top:12px}
+.trudy-reading{max-width:760px}
+.trudy-samples{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;margin-top:32px}
+.trudy-list{padding-left:22px}
+.trudy-list li{margin:16px 0}
+.trudy-details{margin:28px 0 0}
+.trudy-details>div{display:grid;grid-template-columns:1fr 1.4fr;gap:20px;border-bottom:1px solid var(--line);padding:14px 0}
+.trudy-details dt{font-weight:700}
+.trudy-details dd{margin:0}
+.trudy-page button{font:inherit;font-weight:700;max-width:100%;white-space:normal}
+.trudy-page button:disabled{background:#e1e6e1;color:#425348;border-color:#bdc9c0;cursor:not-allowed}
+.trudy-page a:focus-visible{outline:3px solid var(--blue);outline-offset:5px}
+.trudy-page #inside{scroll-margin-top:95px}
+@media(max-width:900px){.trudy-hero{grid-template-columns:1fr;gap:40px}}
+@media(max-width:600px){.trudy-samples{grid-template-columns:1fr}.trudy-samples figure{max-width:350px;width:100%;margin:auto}.trudy-details>div{grid-template-columns:1fr;gap:4px}}
+
+.trudy-cover img{width:100%;height:auto;border-radius:12px;box-shadow:var(--shadow)}
+.trudy-samples img{width:100%;height:auto;border:1px solid var(--line);background:white}
+.trudy-samples a{display:block}
