@@ -30,3 +30,17 @@ A separate broader store can have its own brand and unrelated products. Land & S
 ## Review workflow
 
 Review local changes, save a commit on the review branch, push that branch, and create a draft pull request. A push can create the now-authorized Cloudflare preview. Confirm signed-out access is blocked and review desktop/mobile layouts, menu, links, and disabled CTAs. Merge to main remains a separate user decision because main deploys automatically. No domain or production settings changes are part of this work.
+
+## Artwork and content update
+
+Added the supplied official cover, two supplied coloring pages, and “Where Is Bunny Hiding?” extracted from PDF page 16. Website images are optimized WebP copies; original files are unchanged. The complete interior PDF is not included in the website.
+
+The PDF confirms R.C. Linnarz, editor E.M. Linnarz, 24 interior pages, and 8.5 × 11 inch page size. These describe the source interior, not independently verified Amazon manufacturing details. Copy now names actual activities found in the book. Both purchase buttons use Ryan’s supplied Amazon Mexico URL, explicitly labeled for that marketplace. Amazon blocked automated listing inspection; binding, age guidance, publication date, and published page count still require confirmation. Do not infer publication date from copyright year. These edits remain local for Ryan to commit and push using GitHub Desktop.
+
+## Supplied Amazon details confirmed by Ryan
+
+Paperback, Book 1 of Trudy Travels, reading age 3–9, 24 pages, English, dimensions 8.5 × 0.06 × 11 inches. Description confirms 10 coloring pages, 10 activities, a certificate, and notes/doodles space. Applied these details. Publication date was not supplied; omitted that optional row rather than guessing. Amazon lists both R.C. Linnarz and E.M. Linnarz as authors, while the interior credits E.M. as editor; the page labels Amazon author credits separately and retains the interior credit in the introduction. Existing Amazon Mexico product link is retained; supplied series links are not substituted for the product purchase link.
+
+## US purchase link and subtitle
+
+Ryan supplied the Amazon US product listing for the same ASIN and confirmed the subtitle as A Day at the Beach. Both purchase links now use https://www.amazon.com/dp/B0HL7F1RQM with search tracking removed. This supersedes the earlier Mexico-link notes.

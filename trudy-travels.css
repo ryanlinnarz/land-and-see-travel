@@ -21,3 +21,7 @@
 .trudy-page #inside{scroll-margin-top:95px}
 @media(max-width:900px){.trudy-hero{grid-template-columns:1fr;gap:40px}}
 @media(max-width:600px){.trudy-samples{grid-template-columns:1fr}.trudy-samples figure{max-width:350px;width:100%;margin:auto}.trudy-details>div{grid-template-columns:1fr;gap:4px}}
+
+.trudy-cover img{width:100%;height:auto;border-radius:12px;box-shadow:var(--shadow)}
+.trudy-samples img{width:100%;height:auto;border:1px solid var(--line);background:white}
+.trudy-samples a{display:block}
