@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#173d2a"><link rel="icon" href="assets/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<title>Trip Inquiry | Land &amp; See Travel</title>
+<meta name="description" content="Travel planning and trip booking with Ryan Linnarz at Land &amp; See Travel, an independent affiliate of Atlas Coast Travel Group.">
+<link rel="canonical" href="https://landseetravel.com/trip-inquiry">
+<style>
+.trip-page{background:var(--cream)}
+.trip-heading{padding:30px 0 0}.trip-breadcrumb{font-size:14px;color:var(--muted);margin-bottom:26px}
+.trip-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:center;padding:20px 0 70px}
+.trip-hero h1{font-family:"Playfair Display",Georgia,serif;color:var(--green);font-size:clamp(40px,5.3vw,66px);letter-spacing:-1px;line-height:1.1;margin:0 0 24px}
+.trip-hero .lead{font-size:21px}.trip-hero .button{margin:14px 0 10px}.trip-photo{margin:0}.trip-photo img{width:100%;height:480px;object-fit:cover;border-radius:20px}
+.trip-disclosure{font-size:14px;color:var(--muted);max-width:560px}.trip-how{background:white}.trip-how .story-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.trip-how h3{font-size:24px}
+.trip-contact{padding:65px 24px;text-align:center;border-top:1px solid var(--line)}.trip-contact h2{font-size:clamp(32px,4vw,44px);color:var(--green)}.trip-contact>p{max-width:650px;margin:18px auto}.trip-contact .button{margin:10px}.trip-policies{font-size:14px;color:var(--muted)}.trip-policies a{color:var(--green);text-underline-offset:3px}
+.skip-link{position:fixed;top:10px;left:10px;z-index:100;background:white;padding:12px 20px;transform:translateY(-160%)}.skip-link:focus{transform:translateY(0)}a:focus-visible,button:focus-visible{outline:3px solid var(--blue-2);outline-offset:4px}
+@media(max-width:900px){.trip-hero{grid-template-columns:1fr;gap:30px;padding-bottom:50px}.trip-photo img{height:380px}.trip-how .story-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.trip-heading{padding-top:22px}.trip-hero{padding-top:8px}.trip-hero .lead{font-size:19px}.trip-photo img{height:330px}.trip-contact{padding:48px 20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.planning-scene{background:linear-gradient(90deg,rgba(13,35,31,.38),rgba(13,35,31,.12)),url('assets/planning-coast.jpg') center/cover;min-height:calc(100vh - 90px);padding:70px 24px;display:flex;align-items:center;justify-content:center}
+.planning-panel{background:rgba(255,255,255,.97);width:min(100%,720px);padding:52px;border-radius:12px;box-shadow:0 20px 70px #102d3540}
+.planning-panel h1{font-family:'Playfair Display',Georgia,serif;color:#173d2a;font-size:clamp(36px,5vw,54px);line-height:1.13;margin:12px 0 24px}
+.planning-panel p{line-height:1.75}.planning-panel .button{margin:20px 0}.affiliation,.policy-links,.form-help{font-size:14px}.policy-links a{color:#173d2a;text-decoration:underline}.inquiry-scene{background-image:linear-gradient(#102d352b,#102d352b),url('assets/inquiry-cove.jpg');align-items:flex-start}.inquiry-panel{width:min(100%,760px)}
+.inquiry-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.inquiry-grid label{display:block;font-weight:600;font-size:15px}.inquiry-grid input,.inquiry-grid textarea,.inquiry-grid select{display:block;width:100%;border:1px solid #b9c7bd;border-radius:5px;background:white;padding:12px;margin-top:8px;font:inherit;color:#173d2a}.full-field{grid-column:1/-1}.preview-note{background:#f5f4ee;border-left:3px solid #b28a41;padding:14px;font-size:14px}.inquiry-panel button:disabled{opacity:.65;cursor:not-allowed}
+@media(max-width:600px){.planning-scene{padding:28px 16px}.planning-panel{padding:28px 22px}.inquiry-grid{grid-template-columns:1fr}.full-field{grid-column:auto}}
+</style></head><body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Land & See Travel home">
+        <img src="assets/logo-mark.png" alt="Land & See Travel" class="brand-mark">
+        <span class="brand-text"><strong>Land &amp; See</strong><small>TRAVEL</small></span>
+      </a>
+
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+      <nav class="nav">
+        <a href="Land-Travel.html">Land</a>
+        <a href="index.html#sea">Sea</a>
+        <a href="Destinations.html">Destinations</a>
+        <a href="index.html#tips">Travel Tips</a>
+        <a href="index.html#gear">Gear</a>
+        <a href="index.html#about">About</a>
+        <a class="nav-cta" href="plan-my-trip.html">Plan My Trip</a>
+      </nav>
+    </div>
+  </header>
+<main id="main-content" class="planning-scene inquiry-scene"><section class="planning-panel inquiry-panel" aria-labelledby="inquiry-title"><a href="plan-my-trip.html">← Travel planning with Ryan</a><p class="eyebrow green">LET’S START PLANNING</p><h1 id="inquiry-title">Tell me about your trip.</h1><p>You don’t need every detail figured out. Share what you have in mind, and we’ll take it from there.</p><form id="trip-inquiry-form" action="https://formsubmit.co/ajax/landseetravelco@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="New trip inquiry — Land &amp; See Travel">
+<input type="hidden" name="_template" value="table">
+<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+<fieldset style="border:0;padding:0;margin:24px 0"><div class="inquiry-grid"><label>Your name<input type="text" name="name" autocomplete="name" maxlength="150" required></label><label>Email address<input type="email" name="email" autocomplete="email" maxlength="254" required></label><label>Phone (optional)<input type="tel" name="phone" autocomplete="tel" maxlength="50"></label><label>Number of travelers<input type="number" name="travelers" min="1" max="500" required></label><label class="full-field">Where would you like to go?<input type="text" name="destination" maxlength="300" placeholder="A destination, a few ideas, or help deciding" required></label><label>Approximate travel dates<input type="text" name="dates" maxlength="200" placeholder="Flexible dates are welcome"></label><label>Approximate total trip budget<input type="text" name="budget" maxlength="150" placeholder="An estimate is fine"></label><label class="full-field">What would make this a great trip for you?<textarea name="message" rows="4" maxlength="5000"></textarea></label></div></fieldset><p class="form-help">Please leave passport details and payment information out of this form. Submitting an inquiry does not confirm a booking.</p><p class="policy-links">Read our <a href="privacy-policy.html">Privacy Policy</a> and <a href="Terms-and-Conditions.html">Terms &amp; Conditions</a>.</p><button type="submit" class="button button-dark" id="inquiry-submit">Send My Trip Inquiry</button>
+<p id="inquiry-status" role="status" aria-live="polite" tabindex="-1"></p>
+<noscript><p>Please enable JavaScript to send this form, or email <a href="mailto:ryan@landseetravel.com">ryan@landseetravel.com</a>.</p></noscript></form><p class="affiliation">I am an independent travel agent affiliated with Atlas Coast Travel Group.</p></section></main>
+<footer class="footer">
+    <div class="container footer-grid">
+
+      <div>
+        <img src="assets/logo-full.png" alt="Land & See Travel" class="footer-logo">
+        <p>Adventures from campgrounds to cruises — real trips, real tips, real gear.</p><p>Independent Affiliate of Atlas Coast Travel Group.</p>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <a href="Land-Travel.html">Land</a>
+        <a href="index.html#sea">Sea</a>
+        <a href="Destinations.html">Destinations</a>
+        <a href="index.html#tips">Travel Tips</a>
+      </div>
+
+      <div>
+        <h4>Information</h4>
+        <a href="index.html#gear">Gear</a>
+        <a href="plan-my-trip.html">Travel Planning</a>
+        <a href="index.html#about">About</a>
+        <a href="Terms-and-Conditions.html">Terms &amp; Conditions</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Land &amp; See Travel. All rights reserved.</span>
+      <span>Built for the journey.</span>
+    </div>
+  </footer>
+<script src="script.js"></script>
+<script src="trip-inquiry.js"></script></body></html>
