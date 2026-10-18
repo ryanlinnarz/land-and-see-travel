@@ -26,7 +26,7 @@
 .planning-panel p{line-height:1.75}.planning-panel .button{margin:20px 0}.affiliation,.policy-links,.form-help{font-size:14px}.policy-links a{color:#173d2a;text-decoration:underline}.inquiry-scene{background-image:linear-gradient(#102d352b,#102d352b),url('assets/inquiry-cove.jpg');align-items:flex-start}.inquiry-panel{width:min(100%,760px)}
 .inquiry-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.inquiry-grid label{display:block;font-weight:600;font-size:15px}.inquiry-grid input,.inquiry-grid textarea,.inquiry-grid select{display:block;width:100%;border:1px solid #b9c7bd;border-radius:5px;background:white;padding:12px;margin-top:8px;font:inherit;color:#173d2a}.full-field{grid-column:1/-1}.preview-note{background:#f5f4ee;border-left:3px solid #b28a41;padding:14px;font-size:14px}.inquiry-panel button:disabled{opacity:.65;cursor:not-allowed}
 @media(max-width:600px){.planning-scene{padding:28px 16px}.planning-panel{padding:28px 22px}.inquiry-grid{grid-template-columns:1fr}.full-field{grid-column:auto}}
-</style></head><body>
+[hidden]{display:none!important}.date-options{border:1px solid #d4ded5;border-radius:6px;padding:16px;margin:0;min-width:0}.date-options legend{padding:0 6px;font-weight:600}.inquiry-grid>*{min-width:0}</style></head><body>
 <a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
     <div class="container nav-wrap">
@@ -48,11 +48,26 @@
       </nav>
     </div>
   </header>
-<main id="main-content" class="planning-scene inquiry-scene"><section class="planning-panel inquiry-panel" aria-labelledby="inquiry-title"><a href="plan-my-trip.html">← Travel planning with Ryan</a><p class="eyebrow green">LET’S START PLANNING</p><h1 id="inquiry-title">Tell me about your trip.</h1><p>You don’t need every detail figured out. Share what you have in mind, and we’ll take it from there.</p><form id="trip-inquiry-form" action="https://formsubmit.co/ajax/8b125580406e38162581355a5fed14cb" method="POST">
+<main id="main-content" class="planning-scene inquiry-scene"><section class="planning-panel inquiry-panel" aria-labelledby="inquiry-title"><a href="plan-my-trip.html">← Travel planning with Ryan</a><p class="eyebrow green">LET’S START PLANNING</p><h1 id="inquiry-title">Tell me about your trip.</h1><p>You don’t need every detail figured out. Share what you have in mind, and we’ll take it from there.</p><form id="trip-inquiry-form" action="/api/trip-inquiry" method="POST">
 <input type="hidden" name="_subject" value="New trip inquiry — Land &amp; See Travel">
 <input type="hidden" name="_template" value="table">
 <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-<fieldset style="border:0;padding:0;margin:24px 0"><div class="inquiry-grid"><label>Your name<input type="text" name="name" autocomplete="name" maxlength="150" required></label><label>Email address<input type="email" name="email" autocomplete="email" maxlength="254" required></label><label>Phone (optional)<input type="tel" name="phone" autocomplete="tel" maxlength="50"></label><label>Number of travelers<input type="number" name="travelers" min="1" max="500" required></label><label class="full-field">Where would you like to go?<input type="text" name="destination" maxlength="300" placeholder="A destination, a few ideas, or help deciding" required></label><label>Approximate travel dates<input type="text" name="dates" maxlength="200" placeholder="Flexible dates are welcome"></label><label>Approximate total trip budget<input type="text" name="budget" maxlength="150" placeholder="An estimate is fine"></label><label class="full-field">What would make this a great trip for you?<textarea name="message" rows="4" maxlength="5000"></textarea></label></div></fieldset><p class="form-help">Please leave passport details and payment information out of this form. Submitting an inquiry does not confirm a booking.</p><p class="policy-links">Read our <a href="privacy-policy.html">Privacy Policy</a> and <a href="Terms-and-Conditions.html">Terms &amp; Conditions</a>.</p><button type="submit" class="button button-dark" id="inquiry-submit">Send My Trip Inquiry</button>
+<fieldset style="border:0;padding:0;margin:24px 0"><div class="inquiry-grid">
+<label>First name *<input type="text" name="first_name" autocomplete="given-name" maxlength="75" required></label>
+<label>Last name *<input type="text" name="last_name" autocomplete="family-name" maxlength="75" required></label>
+<label>Email address *<input type="email" name="email" autocomplete="email" maxlength="254" required></label>
+<label>Phone (optional)<input type="tel" name="phone" autocomplete="tel" maxlength="50"></label>
+<label class="full-field">Where would you like to go?<input type="text" name="destination" maxlength="300" placeholder="A destination, a few ideas, or help deciding"></label>
+<label>Adults *<input type="number" name="adults" min="1" max="500" value="1" required></label>
+<label>Children<input type="number" name="children" min="0" max="499" value="0" required></label>
+<label class="full-field">When would you like to travel?<select name="date_mode" id="date-mode"><option value="flexible">Flexible / not sure yet</option><option value="exact">Exact dates</option><option value="months">Month range</option></select></label>
+<fieldset class="full-field date-options" data-date-panel="exact" hidden disabled><legend>Exact travel dates</legend><div class="inquiry-grid"><label>Start date *<input type="date" name="start_date" required></label><label>End date *<input type="date" name="end_date" required></label></div></fieldset>
+<fieldset class="full-field date-options" data-date-panel="months" hidden disabled><legend>Travel month range</legend><div class="inquiry-grid"><label>First month *<input type="month" name="start_month" required></label><label>Last month *<input type="month" name="end_month" required></label></div></fieldset>
+<label class="full-field" data-date-panel="flexible">Any timing preferences?<input type="text" name="dates" maxlength="200" placeholder="For example, next spring or around a school break"></label>
+<label>Trip type<select name="trip_type"><option value="">Select an option…</option>Cruise</option><option>All-inclusive</option><option>Tour</option><option>Custom</option><option>Other</option><option>Help me decide</option></select></label>
+<label>Estimated total trip budget (USD)<select name="budget"><option value="">Select an option…</option>Under $2,000</option><option>$2,000–$5,000</option><option>$5,000–$10,000</option><option>$10,000–$20,000</option><option>$20,000+</option><option>Not sure yet</option></select></label>
+<label class="full-field">What would make this a great trip for you?<textarea name="message" rows="4" maxlength="5000" placeholder="Interests, special occasions, or anything else you’d like me to know"></textarea></label>
+</div></fieldset><p class="form-help">Please leave passport details and payment information out of this form. Submitting an inquiry does not confirm a booking.</p><p class="policy-links">Read our <a href="privacy-policy.html">Privacy Policy</a> and <a href="Terms-and-Conditions.html">Terms &amp; Conditions</a>.</p><button type="submit" class="button button-dark" id="inquiry-submit">Send My Trip Inquiry</button>
 <p id="inquiry-status" role="status" aria-live="polite" tabindex="-1"></p>
 <noscript><p>Please enable JavaScript to send this form, or email <a href="mailto:ryan@landseetravel.com">ryan@landseetravel.com</a>.</p></noscript></form><p class="affiliation">I am an independent travel agent affiliated with Atlas Coast Travel Group.</p></section></main>
 <footer class="footer">
@@ -88,4 +103,4 @@
     </div>
   </footer>
 <script src="script.js"></script>
-<script src="trip-inquiry.js"></script></body></html>
+<script src="trip-inquiry.js?v=cloudflare-1"></script></body></html>

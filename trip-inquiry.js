@@ -2,6 +2,17 @@
   const form = document.getElementById('trip-inquiry-form');
   const button = document.getElementById('inquiry-submit');
   const status = document.getElementById('inquiry-status');
+  const dateMode = document.getElementById('date-mode');
+  const syncDates = () => {
+    form.querySelectorAll('[data-date-panel]').forEach(panel => {
+      const active = panel.dataset.datePanel === dateMode.value;
+      panel.hidden = !active;
+      if (panel.tagName === 'FIELDSET') panel.disabled = !active;
+      else panel.querySelectorAll('input').forEach(input => { input.disabled = !active; });
+    });
+  };
+  dateMode.addEventListener('change', syncDates);
+  syncDates();
   let sending = false;
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -32,12 +43,13 @@
         throw failure;
       }
       form.reset();
+      syncDates();
       status.textContent = "Thanks for reaching out! Your inquiry was submitted. I'll personally reply within one business day. — Ryan, Land & See Travel";
     } catch (error) {
       status.textContent = error.name === 'AbortError'
         ? 'The request timed out, so we could not confirm receipt. Please email ryan@landseetravel.com if you do not hear back.'
         : error.providerMessage
-          ? 'The form service responded: ' + error.providerMessage + ' Your entries have been kept. For help, email ryan@landseetravel.com.'
+          ? error.providerMessage + ' Your entries have been kept.'
           : 'We could not confirm that your inquiry was sent. Your entries are still here. Please try again or email ryan@landseetravel.com.';
     } finally {
       clearTimeout(timeout);
