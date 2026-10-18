@@ -48,7 +48,7 @@ async function readLimitedJson(request) {
 export async function onRequest({ request }) {
   const url = new URL(request.url);
   if (request.method === 'GET') {
-    return json({ ready: true, version: 'delivery-2', message: 'Inquiry receiver is available.' });
+    return json({ ready: true, version: 'delivery-3', message: 'Inquiry receiver is available.' });
   }
   if (request.method !== 'POST') {
     return json({ success: false, message: 'Method not allowed.' }, 405, { Allow: 'GET, POST' });
@@ -128,8 +128,13 @@ export async function onRequest({ request }) {
       },
       body: JSON.stringify(payload),
       signal: controller.signal,
-      redirect: 'error'
+      // workerd rejects redirect:'error' during Request construction.
+      // Inspect redirects explicitly so traveler data is never forwarded elsewhere.
+      redirect: 'manual'
     });
+    if (upstream.status >= 300 && upstream.status < 400) {
+      return json({ success: false, message: 'The delivery service redirected the request (HTTP ' + upstream.status + '). The website did not forward your details to another address. Please email ryan@landseetravel.com.' }, 424);
+    }
     let result;
     try {
       result = await upstream.json();
