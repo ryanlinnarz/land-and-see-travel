@@ -48,7 +48,7 @@ async function readLimitedJson(request) {
 export async function onRequest({ request }) {
   const url = new URL(request.url);
   if (request.method === 'GET') {
-    return json({ ready: true, message: 'Inquiry receiver is available.' });
+    return json({ ready: true, version: 'delivery-2', message: 'Inquiry receiver is available.' });
   }
   if (request.method !== 'POST') {
     return json({ success: false, message: 'Method not allowed.' }, 405, { Allow: 'GET, POST' });
@@ -130,16 +130,27 @@ export async function onRequest({ request }) {
       signal: controller.signal,
       redirect: 'error'
     });
-    const result = await upstream.json();
+    let result;
+    try {
+      result = await upstream.json();
+    } catch {
+      return json({ success: false, message: 'The delivery service returned an unexpected response (HTTP ' + upstream.status + '). Email delivery was not confirmed. Please email ryan@landseetravel.com.' }, 424);
+    }
     if (!upstream.ok || !(result.success === true || result.success === 'true')) {
-      return json({ success: false, message: 'Our delivery service did not accept your inquiry. Please try again later or email ryan@landseetravel.com.' }, 502);
+      const detail = String(result.message || result.error || '').toLowerCase();
+      let message = 'The delivery service did not accept the inquiry (HTTP ' + upstream.status + '). Please email ryan@landseetravel.com.';
+      if (/activat|confirm.*email|verify.*email/.test(detail)) message = 'The delivery service requires email activation for this form connection. Ryan needs to check the receiving inbox and confirm the activation before inquiries can be delivered.';
+      else if (/captcha/.test(detail)) message = 'The delivery service requires a verification step that this forwarding connection cannot complete. Please email ryan@landseetravel.com.';
+      else if (upstream.status === 429 || /too many|rate.limit/.test(detail)) message = 'The delivery service is temporarily limiting requests. Please wait before retrying, or email ryan@landseetravel.com.';
+      else if (upstream.status === 403) message = 'The delivery service refused the website connection (HTTP 403). Please email ryan@landseetravel.com.';
+      return json({ success: false, message }, 424);
     }
     // Acceptance is confirmed; inbox arrival is checked separately during deployment.
     return json({ success: true });
   } catch (error) {
     return json({ success: false, message: error.name === 'AbortError'
       ? 'Delivery timed out, so receipt is uncertain. Please email ryan@landseetravel.com rather than resubmitting immediately.'
-      : 'Our delivery service is temporarily unavailable. Please try again later or email ryan@landseetravel.com.' }, error.name === 'AbortError' ? 504 : 502);
+      : 'The website could not connect to the delivery service. Please email ryan@landseetravel.com.' }, 424);
   } finally {
     clearTimeout(timeout);
   }
