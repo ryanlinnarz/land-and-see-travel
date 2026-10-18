@@ -2,3 +2,7 @@
 /terms-and-conditions /Terms-and-Conditions 301
 /terms-and-conditions.html /Terms-and-Conditions 301
 /terms-and-conditions/ /Terms-and-Conditions 301
+
+# Serve the inquiry page at the planning URL too
+/plan-my-trip/inquiry /trip-inquiry.html 200
+/plan-my-trip/inquiry/ /trip-inquiry.html 200
