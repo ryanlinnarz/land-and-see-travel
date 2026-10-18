@@ -21,20 +21,24 @@
     try {
       const response = await fetch(form.action, {
         method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: new FormData(form),
+        headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(form))),
         signal: controller.signal
       });
       const result = await response.json();
       if (!response.ok || !(result.success === true || result.success === 'true')) {
-        throw new Error('Submission not confirmed');
+        const failure = new Error('Submission not confirmed');
+        if (typeof result.message === 'string') failure.providerMessage = result.message.slice(0, 600);
+        throw failure;
       }
       form.reset();
       status.textContent = "Thanks for reaching out! Your inquiry was submitted. I'll personally reply within one business day. — Ryan, Land & See Travel";
     } catch (error) {
       status.textContent = error.name === 'AbortError'
         ? 'The request timed out, so we could not confirm receipt. Please email ryan@landseetravel.com if you do not hear back.'
-        : 'We could not confirm that your inquiry was sent. Your entries are still here. Please try again or email ryan@landseetravel.com.';
+        : error.providerMessage
+          ? 'The form service responded: ' + error.providerMessage + ' Your entries have been kept. For help, email ryan@landseetravel.com.'
+          : 'We could not confirm that your inquiry was sent. Your entries are still here. Please try again or email ryan@landseetravel.com.';
     } finally {
       clearTimeout(timeout);
       sending = false;
