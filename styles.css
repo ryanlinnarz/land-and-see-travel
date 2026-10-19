@@ -142,3 +142,17 @@ h2{font-size:clamp(36px,4vw,55px);line-height:1.08;letter-spacing:-1px;margin:0 
   .form-row{display:block}
   .signup-form button{width:100%;height:48px;margin-top:10px}
 }
+
+/* Homepage booking section: one destination for planning links across the site. */
+#booking,#plan{scroll-margin-top:105px}
+.booking-section{position:relative;color:#fff;background:linear-gradient(90deg,rgba(12,43,36,.93),rgba(12,43,36,.75) 48%,rgba(12,43,36,.38)),url("assets/planning-coast.jpg") center/cover no-repeat}
+.booking-anchor{position:absolute;top:0;left:0;width:1px;height:1px;pointer-events:none}
+.booking-inner{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+.booking-copy{max-width:560px}.booking-copy h2{font-size:clamp(36px,4.8vw,58px)}.booking-copy p:not(.eyebrow){font-size:19px;line-height:1.75;color:rgba(255,255,255,.92)}
+.booking-card{background:#fff;color:var(--ink);padding:36px;border-radius:20px;box-shadow:0 18px 50px rgba(5,25,16,.22)}
+.booking-card h3{font-size:30px;line-height:1.2;margin:0 0 24px}.booking-card .eyebrow{font-size:11px;letter-spacing:2px}.booking-card .button{max-width:100%;text-align:center}
+.booking-card .booking-help{font-size:15px;line-height:1.7;color:#4c5e53;margin:20px 0}.booking-card .booking-affiliation{font-size:14px;line-height:1.65;color:#4c5e53;border-top:1px solid var(--line);padding-top:18px;margin:0 0 12px}.booking-policies{font-size:14px;margin:0}.booking-policies a{text-underline-offset:3px;color:var(--green)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+@media(max-width:900px){.booking-inner{grid-template-columns:1fr;gap:30px}.booking-copy{max-width:680px}.booking-card{max-width:680px}.booking-section{background-position:35% center}}
+@media(max-width:600px){.booking-card{padding:26px 22px}.booking-card .button{width:100%}.booking-copy p:not(.eyebrow){font-size:18px}#booking,#plan{scroll-margin-top:90px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

@@ -3,9 +3,14 @@
 /terms-and-conditions.html /Terms-and-Conditions 301
 /terms-and-conditions/ /Terms-and-Conditions 301
 
-# Retired inquiry URLs now open the agency booking form
+# Inquiry URLs go directly to the agency form
 /plan-my-trip/inquiry https://book.landseetravel.com/form/atlas-466cce 301
 /plan-my-trip/inquiry/ https://book.landseetravel.com/form/atlas-466cce 301
 /trip-inquiry https://book.landseetravel.com/form/atlas-466cce 301
 /trip-inquiry.html https://book.landseetravel.com/form/atlas-466cce 301
 /trip-inquiry/ https://book.landseetravel.com/form/atlas-466cce 301
+
+# The homepage booking section replaces the standalone pitch page
+/plan-my-trip /#booking 301
+/plan-my-trip.html /#booking 301
+/plan-my-trip/ /#booking 301
