@@ -3,6 +3,9 @@
 /terms-and-conditions.html /Terms-and-Conditions 301
 /terms-and-conditions/ /Terms-and-Conditions 301
 
-# Serve the inquiry page at the planning URL too
-/plan-my-trip/inquiry /trip-inquiry.html 200
-/plan-my-trip/inquiry/ /trip-inquiry.html 200
+# Retired inquiry URLs now open the agency booking form
+/plan-my-trip/inquiry https://book.landseetravel.com/form/atlas-466cce 301
+/plan-my-trip/inquiry/ https://book.landseetravel.com/form/atlas-466cce 301
+/trip-inquiry https://book.landseetravel.com/form/atlas-466cce 301
+/trip-inquiry.html https://book.landseetravel.com/form/atlas-466cce 301
+/trip-inquiry/ https://book.landseetravel.com/form/atlas-466cce 301
