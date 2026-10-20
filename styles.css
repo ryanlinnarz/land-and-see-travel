@@ -144,6 +144,21 @@ h2{font-size:clamp(36px,4vw,55px);line-height:1.08;letter-spacing:-1px;margin:0 
 }
 
 /* Homepage booking section: one destination for planning links across the site. */
+/* A shorter homepage hero leaves the explanation to the welcome section. */
+.home-page .hero{min-height:520px}
+.home-page .hero-content{padding:64px 0}
+.home-page .hero h1{font-size:clamp(44px,6vw,74px);line-height:1.08}
+.home-page .hero-actions{margin-top:24px}
+@media(max-width:600px){.home-page .hero{min-height:420px}.home-page .hero-content{padding:48px 0}.home-page .hero h1{font-size:44px}.home-page .hero-actions{gap:18px}}
+/* The welcome copy reads as a compact closing band beneath the hero. */
+.home-page .intro{padding:32px 0;background:var(--cream);border-bottom:1px solid var(--line)}
+.home-page .intro-grid{grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+.home-page .intro .eyebrow{font-size:14px;letter-spacing:2px;margin:0 0 10px}
+.home-page .intro h2{font-size:clamp(27px,2.5vw,34px);line-height:1.16;letter-spacing:-.5px;margin:0}
+.home-page .intro p:not(.eyebrow){font-size:15px;line-height:1.65;margin:0 0 9px;color:#46574c}
+.home-page .intro p:last-child{margin-bottom:0}
+@media(max-width:900px){.home-page .intro-grid{grid-template-columns:1fr;gap:18px}}
+@media(max-width:600px){.home-page .intro{padding:26px 0}.home-page .intro-grid{gap:16px}.home-page .intro h2{font-size:28px}}
 #booking,#plan{scroll-margin-top:105px}
 .booking-section{position:relative;color:#fff;background:linear-gradient(90deg,rgba(12,43,36,.93),rgba(12,43,36,.75) 48%,rgba(12,43,36,.38)),url("assets/planning-coast.jpg") center/cover no-repeat}
 .booking-anchor{position:absolute;top:0;left:0;width:1px;height:1px;pointer-events:none}
