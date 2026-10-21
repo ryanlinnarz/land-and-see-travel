@@ -171,3 +171,45 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 @media(max-width:900px){.booking-inner{grid-template-columns:1fr;gap:30px}.booking-copy{max-width:680px}.booking-card{max-width:680px}.booking-section{background-position:35% center}}
 @media(max-width:600px){.booking-card{padding:26px 22px}.booking-card .button{width:100%}.booking-copy p:not(.eyebrow){font-size:18px}#booking,#plan{scroll-margin-top:90px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Local design preview: introduction, exploration, then planning. */
+.home-page .hero{min-height:550px}
+.home-page .hero-content{max-width:1160px;padding:64px 0}
+.home-page .hero h1{font-size:clamp(42px,5.1vw,66px);max-width:880px;line-height:1.12}
+.home-page .hero .eyebrow{font-size:15px;letter-spacing:2.5px}
+.hero-welcome-copy{max-width:660px;font-size:17px;line-height:1.7;color:#f3f6f3}
+.hero-welcome-copy p{margin:0 0 10px}
+.home-page .intro{padding:32px 0}
+.explore-band{display:flex;align-items:center;justify-content:space-between;gap:32px}
+.home-page .intro h2{font-size:clamp(27px,2.8vw,36px);margin:0}
+.home-page .intro .hero-actions{margin:0;flex-wrap:wrap}
+.home-page .booking-section{background:#e9f2f5;color:var(--ink)}
+.home-page .booking-copy .eyebrow{color:#28617a}
+.home-page .booking-copy p:not(.eyebrow){color:#465e69}
+.home-page .booking-card{box-shadow:0 14px 40px rgba(29,69,89,.1);border:1px solid #d8e5eb}
+@media(max-width:900px){.explore-band{align-items:flex-start;flex-direction:column;gap:22px}}
+@media(max-width:600px){.home-page .hero{min-height:0}.home-page .hero-content{padding:48px 0}.home-page .hero h1{font-size:40px;letter-spacing:-1px}.hero-welcome-copy{font-size:16px}.home-page .intro{padding:28px 0}.home-page .intro .hero-actions{gap:18px}}
+
+.home-page .booking-section{background:linear-gradient(90deg,rgba(239,247,249,.94),rgba(239,247,249,.84) 46%,rgba(239,247,249,.42)),url("assets/booking-hawaii-ocean.jpg") center 56%/cover no-repeat}
+.home-page .about-photo img{height:auto;aspect-ratio:4/3;object-fit:cover}
+@media(max-width:900px){.home-page .booking-section{background:linear-gradient(rgba(239,247,249,.86),rgba(239,247,249,.76)),url("assets/booking-hawaii-ocean.jpg") center/cover no-repeat}}
+
+.home-page .hero-content{position:relative}
+.hero-meet-link{position:absolute;right:0;bottom:66px;padding:12px 18px;border:1px solid rgba(255,255,255,.65);border-radius:999px;background:rgba(5,25,16,.35)}
+.home-page .intro{padding:22px 0}
+.home-page .intro h2{font-size:clamp(24px,2.6vw,32px);line-height:1.25}
+.explore-band{gap:24px}
+@media(max-width:1100px){.hero-meet-link{position:static;display:inline-block;margin-top:18px}}
+@media(max-width:900px){.explore-band{flex-direction:row;align-items:center}.home-page .intro h2{font-size:26px}}
+@media(max-width:600px){.explore-band{flex-direction:column;align-items:flex-start;gap:16px}.home-page .intro{padding:22px 0}.home-page .intro h2{font-size:25px}}
+
+/* Keep the ocean visible while giving the copy a light reading surface. */
+.home-page .booking-section{background:linear-gradient(90deg,rgba(239,247,249,.72),rgba(239,247,249,.38) 55%,rgba(239,247,249,.12)),url("assets/booking-hawaii-ocean.jpg") center 56%/cover no-repeat}
+.home-page .booking-copy{background:rgba(246,250,251,.78);padding:28px;border-radius:18px;backdrop-filter:blur(2px)}
+@media(max-width:900px){.home-page .booking-section{background:linear-gradient(rgba(239,247,249,.28),rgba(239,247,249,.22)),url("assets/booking-hawaii-ocean.jpg") center/cover no-repeat}.home-page .booking-copy{padding:24px}}
+
+.home-page .booking-inner{display:flex;justify-content:flex-end}
+.home-page .booking-card{width:min(100%,540px);background:rgba(255,255,255,.86);backdrop-filter:blur(5px);padding:38px}
+.home-page .booking-card h2{font-size:clamp(32px,3.5vw,44px);line-height:1.15;margin:0 0 26px}
+.home-page .booking-section{background:linear-gradient(90deg,rgba(239,247,249,.12),rgba(239,247,249,.24)),url("assets/booking-hawaii-ocean.jpg") center 56%/cover no-repeat}
+@media(max-width:600px){.home-page .booking-card{padding:28px 24px}.home-page .booking-section{padding:54px 0}}
